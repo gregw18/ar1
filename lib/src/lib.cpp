@@ -28,6 +28,7 @@ using namespace std;
                         of my own design, in VS Code and copied the resulting code into hackerrank
                         when complete. The complete evolution of the program can be found at 
                         github.com\gregw18\ar1.
+                        Ran out of time, one function (the longest) has bug, so not working.
     Problem:
     Given a binary string, swap any two characters, as many times as necessary, to create a palindrome.
     Return the minimum number of swaps required. Return -1 if impossible.
