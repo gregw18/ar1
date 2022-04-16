@@ -64,6 +64,32 @@ bool isPalindromePossible(string s) {
     return isPossible;
 }
 
+pair<vector<int>, vector<int>> createMismatchedLists(string s) {
+    vector<int> mmzeroPositions;
+    vector<int> mmonePositions;
+
+    int mirrori;
+    int strLen = s.length();
+    if (strLen > 1) {
+        int middlePos = strLen / 2;
+        for (int i = 0; i <= middlePos; i++) {
+            mirrori = strLen - 1 - 1;
+            if (s.substr(i, 1) != s.substr(mirrori, 1)) {
+                if (s.substr(i, 1) == "0") {
+                    mmzeroPositions.push_back(i);
+                    mmonePositions.push_back(mirrori);
+                }
+                else {
+                    mmonePositions.push_back(i);
+                    mmzeroPositions.push_back(mirrori);
+                }
+            }
+        }
+    }
+    
+    return make_pair(mmzeroPositions, mmonePositions);
+}
+
 int minSwapsRequired(string s) {
 
     return 0;
