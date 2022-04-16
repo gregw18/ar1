@@ -52,7 +52,7 @@ using namespace std;
 bool isPalindromePossible(string s) {
     bool isPossible = true;
 
-    int numDigits = s.length();
+    int numDigits = (int) s.length();
     if (numDigits % 2 == 0) {
         int numOnes = 0;
         for (int i = 0; i < s.length(); i++) {
@@ -69,11 +69,11 @@ pair<vector<int>, vector<int>> createMismatchedLists(string s) {
     vector<int> mmonePositions;
 
     int mirrori;
-    int strLen = s.length();
+    int strLen = (int) s.length();
     if (strLen > 1) {
         int middlePos = strLen / 2;
         for (int i = 0; i <= middlePos; i++) {
-            mirrori = strLen - 1 - 1;
+            mirrori = strLen - i - 1;
             if (s.substr(i, 1) != s.substr(mirrori, 1)) {
                 if (s.substr(i, 1) == "0") {
                     mmzeroPositions.push_back(i);
@@ -96,8 +96,8 @@ int calcSwapsRequired(vector<int> mmzeroPositions, vector<int> mmonePositions) {
 
     int numRequired = 0;
 
-    int badZeroes = mmzeroPositions.size();
-    int badOnes = mmonePositions.size();
+    int badZeroes = (int) mmzeroPositions.size();
+    int badOnes = (int) mmonePositions.size();
 
     if (badZeroes % 2 == 0) numRequired = badZeroes / 2;
     else numRequired = badZeroes / 2 + 1;
