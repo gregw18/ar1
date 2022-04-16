@@ -11,3 +11,4 @@ int pm_main();
 
 bool isPalindromePossible(std::string s);
 std::pair<std::vector<int>, std::vector<int>> createMismatchedLists(std::string s);
+int calcSwapsRequired(std::vector<int> mmzeroPositions, std::vector<int> mmonePositions);

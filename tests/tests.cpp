@@ -17,6 +17,12 @@ TEST(Tests, testisPossibleNo) {
     ASSERT_EQ(true, isPossible);
 }
 
+// To Test:
+    // Single zero.
+    // Impossible string.
+    // Valid string.
+    // Even len string.
+    // Odd len string.
 TEST(Tests, testcreateLists1) {
     std::string s = "1";
     auto res = createMismatchedLists(s);
@@ -44,4 +50,26 @@ TEST(Tests, testcreateLists3) {
     ASSERT_EQ(expectedOnes, res.second);
 }
 
-//pair<vector<int>, vector<int>> createMismatchedLists(string s) {
+// To Test:
+    // Even counts.
+    // Odd count for one.
+    // Empty counts
+TEST(Tests, testCalcEvenCount) {
+    // "101000"
+    std::vector<int> badZeroes = {0, 3};
+    std::vector<int> badOnes = {3, 5};
+    int calcReq = calcSwapsRequired(badZeroes, badOnes);
+    int expReq = 1;
+    ASSERT_EQ(expReq, calcReq);
+}
+
+TEST(Tests, testCalcOneOdd) {
+    // "1001010"
+    std::vector<int> badZeroes = {0, 3};
+    std::vector<int> badOnes = {1};
+    int calcReq = calcSwapsRequired(badZeroes, badOnes);
+    int expReq = 1;
+    ASSERT_EQ(expReq, calcReq);
+}
+
+//int calcSwapsRequired(vector<int> mmzeroPositions, vector<int> mmonePositions) {
