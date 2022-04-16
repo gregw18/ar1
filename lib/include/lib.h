@@ -6,3 +6,5 @@
 //const std::string generateHelloString(const std::string & personName);
 
 int pm_main();
+
+bool isPalindromePossible(std::string s);

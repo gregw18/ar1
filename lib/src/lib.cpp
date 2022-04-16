@@ -49,6 +49,21 @@ using namespace std;
         calcSwapsRequired(vector, vector)
 */
 
+bool isPalindromePossible(string s) {
+    bool isPossible = true;
+
+    int numDigits = s.length();
+    if (numDigits % 2 == 0) {
+        int numOnes = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.substr(i, 1) == "1") numOnes++;
+        }
+        if (numOnes % 2 == 1) isPossible = false;
+    }
+
+    return isPossible;
+}
+
 int minSwapsRequired(string s) {
 
     return 0;
