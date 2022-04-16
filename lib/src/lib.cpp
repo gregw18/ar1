@@ -106,7 +106,14 @@ int calcSwapsRequired(vector<int> mmzeroPositions, vector<int> mmonePositions) {
 
 int minSwapsRequired(string s) {
 
-    return 0;
+    int numSwaps = -1;
+    if (isPalindromePossible(s)) {
+        auto results = createMismatchedLists(s);
+        numSwaps = calcSwapsRequired(results.first, results.second);
+    }
+    else numSwaps = -1;
+    
+    return numSwaps;
 }
 
 int pm_main()
